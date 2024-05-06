@@ -18,7 +18,7 @@ export default function Sidebar({}: Props) {
       <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
         <Link
           href="/"
-          className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+          className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-10 md:w-10 md:text-base"
         >
           <QuranIcon className="h-7 w-7" color="#ffffff" />
           <span className="sr-only">Quran</span>

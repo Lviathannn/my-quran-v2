@@ -28,7 +28,7 @@ import HamburgerIcon from "../icons/HamburgerIcon";
 export function Navbar() {
   return (
     <div className="container sm:pl-20">
-      <header className="fixed top-0 z-30 flex h-14 w-full items-center justify-between gap-4 bg-background pr-12 sm:static sm:pr-0">
+      <header className="fixed top-0 z-30 flex h-14 w-full items-center justify-between gap-4 bg-background pr-12 sm:static sm:bg-transparent sm:pr-0">
         <div className="flex items-center gap-3">
           <Sheet>
             <SheetTrigger asChild>
@@ -84,7 +84,9 @@ export function Navbar() {
               </nav>
             </SheetContent>
           </Sheet>
-          <p className="text-lg font-semibold text-primary">My Qur&apos;an</p>
+          <Link href="/" className="text-lg font-semibold text-primary">
+            My Qur&apos;an
+          </Link>
         </div>
 
         <DropdownMenu>

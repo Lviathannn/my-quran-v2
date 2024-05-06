@@ -1,24 +1,4 @@
-interface Surah {
-  nomor: number;
-  nama: string;
-  nama_latin: string;
-  jumlah_ayat: number;
-  tempat_turun: string;
-  arti: string;
-  deskripsi: string;
-  audio: string;
-}
-
-interface Ayat {
-  id: number;
-  surah: number;
-  nomor: number;
-  ar: string;
-  tr: string;
-  idn: string;
-}
-
-interface SurahDetail {
+interface QuranSurah {
   nomor: number;
   nama: string;
   nama_latin: string;
@@ -28,7 +8,14 @@ interface SurahDetail {
   deskripsi: string;
   audio: string;
   status: boolean;
-  ayat: Ayat[];
+  ayat: {
+    id: number;
+    surah: number;
+    nomor: number;
+    ar: string;
+    tr: string;
+    idn: string;
+  }[];
   surat_selanjutnya: {
     id: number;
     nomor: number;

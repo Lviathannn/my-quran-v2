@@ -19,7 +19,7 @@ export default function SidebarLink() {
           <TooltipTrigger asChild>
             <Link
               href={item.path}
-              className={`flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${
+              className={`flex h-9 w-9 items-center justify-center rounded-lg p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground md:h-10 md:w-10 ${
                 pathname === item.path ? "bg-accent" : ""
               }`}
             >

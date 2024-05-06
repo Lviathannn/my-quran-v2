@@ -15,7 +15,7 @@ export default function SurahCard({
   totalAyat,
 }: Props) {
   return (
-    <Link href={`/surah/${number}`}>
+    <Link href={`/surah/${number}`} scroll>
       <article className="flex items-center justify-between border-b px-3 py-4 hover:rounded-md hover:border-0 hover:bg-accent">
         <div className="flex items-center gap-4">
           <StarShape number={number} />

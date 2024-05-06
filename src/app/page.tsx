@@ -1,7 +1,8 @@
 import SearchSurah from "@/components/features/SearchSurah";
 import SurahList from "@/components/features/SurahList";
 import BookIcon from "@/components/icons/BookIcon";
-import Quran from "@/components/icons/Quran";
+import Quran from "@/assets/Quran.svg";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -23,7 +24,12 @@ export default function Home() {
             <p className="text-sm text-white">Ayat : 286</p>
           </div>
         </div>
-        <Quran className="absolute -bottom-7 -right-10 md:-bottom-5 md:-right-5" />
+        <Image
+          src={Quran}
+          alt="AlQur'an"
+          className="absolute -bottom-7 -right-10 w-52 md:-bottom-5 md:-right-5 md:w-72"
+          priority
+        />
       </section>
       <SearchSurah />
       <SurahList />
