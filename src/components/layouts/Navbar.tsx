@@ -1,15 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Home,
-  LineChart,
-  Package,
-  Package2,
-  ShoppingCart,
-  Users2,
-} from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 import {
@@ -24,71 +15,74 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import HamburgerIcon from "../icons/HamburgerIcon";
+import { NAVIGATION_ITEMS } from "@/constant";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
-    <div className="container sm:pl-20">
-      <header className="fixed top-0 z-30 flex h-14 w-full items-center justify-between gap-4 bg-background pr-12 sm:static sm:bg-transparent sm:pr-0">
+    <header className="fixed left-0 right-0 top-0 z-30 bg-background">
+      <div className="container flex h-14 w-full items-center justify-between gap-4 sm:pl-20">
         <div className="flex items-center gap-3">
-          <Sheet>
+          <Sheet open={isOpen}>
             <SheetTrigger asChild>
-              <Button size="icon" variant="ghost" className="sm:hidden">
+              <Button
+                size="icon"
+                variant="ghost"
+                className="sm:hidden"
+                onClick={() => {
+                  setIsOpen(true);
+                }}
+              >
                 <HamburgerIcon />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="sm:max-w-xs">
+            <SheetContent
+              side="left"
+              className="sm:max-w-xs"
+              setIsOpen={setIsOpen}
+            >
               <nav className="grid gap-6 text-lg font-medium">
-                <Link
-                  href="#"
-                  className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                >
-                  <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <Home className="h-5 w-5" />
-                  Dashboard
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-foreground"
-                >
-                  <Package className="h-5 w-5" />
-                  Products
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <Users2 className="h-5 w-5" />
-                  Customers
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Settings
-                </Link>
+                {NAVIGATION_ITEMS.map((item) => (
+                  <Link
+                    href={item.path}
+                    className="flex items-center gap-4 px-2.5 text-base font-medium text-muted hover:text-foreground"
+                    key={item.title}
+                  >
+                    <div
+                      className={`rounded-full p-2 ${pathname == item.path && "bg-primary"}`}
+                    >
+                      {item.icon({
+                        className: "h-7 w-7",
+                        color: `${pathname == item.path ? "#ffffff" : "#8789A3"}`,
+                      })}
+                    </div>
+                    {item.title}
+                  </Link>
+                ))}
               </nav>
             </SheetContent>
           </Sheet>
           <Link href="/" className="text-lg font-semibold text-primary">
-            My Qur&apos;an
+            {pathname == "/"
+              ? "My Qur'an"
+              : pathname == "/doa"
+                ? "Doa"
+                : pathname == "/bookmark"
+                  ? "Bookmark"
+                  : pathname == "/explore"
+                    ? "Explore"
+                    : "My Qur'an"}
           </Link>
         </div>
-
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -111,7 +105,7 @@ export function Navbar() {
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }

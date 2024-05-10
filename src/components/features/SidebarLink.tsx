@@ -1,6 +1,6 @@
 "use client";
 
-import { SIDEBAR_ITEMS } from "@/constant";
+import { NAVIGATION_ITEMS } from "@/constant";
 import {
   Tooltip,
   TooltipContent,
@@ -14,7 +14,7 @@ export default function SidebarLink() {
   const pathname = usePathname();
   return (
     <TooltipProvider>
-      {SIDEBAR_ITEMS.map((item, index) => (
+      {NAVIGATION_ITEMS.map((item, index) => (
         <Tooltip key={index}>
           <TooltipTrigger asChild>
             <Link
@@ -23,7 +23,10 @@ export default function SidebarLink() {
                 pathname === item.path ? "bg-accent" : ""
               }`}
             >
-              {item.icon({ className: "h-7 w-7" })}
+              {item.icon({
+                className: "h-7 w-7",
+                color: `${pathname == item.path ? "#25D28C" : "#8789A3"}`,
+              })}
               <span className="sr-only">{item.title}</span>
             </Link>
           </TooltipTrigger>

@@ -18,7 +18,7 @@ export default function AyatCard({
   latin,
 }: Props) {
   return (
-    <article className="space-y-10">
+    <article className="space-y-10" id={number.toString()}>
       <div className="flex w-full justify-between rounded-[10px] bg-accent px-3 py-[10px]">
         <p className="flex aspect-square size-7 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">
           {number}
