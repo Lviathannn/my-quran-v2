@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layouts/Navbar";
 import Sidebar from "@/components/layouts/Sidebar";
 import localFont from "next/font/local";
-import ScrollTop from "@/components/features/ScrollTop";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -33,7 +33,8 @@ export default function RootLayout({
       <body className={`${poppins.className} ${arabic.variable}`}>
         <Navbar />
         <Sidebar />
-        <ScrollTop>{children}</ScrollTop>
+        {children}
+        <Toaster duration={3000} />
       </body>
     </html>
   );
