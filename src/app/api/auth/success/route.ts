@@ -5,8 +5,11 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-  if (!user || user == null || !user.id)
-    throw new Error("something went wrong with authentication" + user);
+  if (!user || user == null || !user.id) {
+    return NextResponse.redirect(
+      process.env.KINDE_SITE_URL || "http://localhost:3000/",
+    );
+  }
 
   const dbUser = await db.user.findUnique({
     where: { kindeId: user.id },
