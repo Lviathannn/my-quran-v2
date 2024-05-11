@@ -15,7 +15,7 @@ export default async function DoaPage() {
         customClass="opacity-50 md:opacity-100"
       />
 
-      <section className="grid grid-cols-1 gap-x-5  md:grid-cols-2 lg:grid-cols-3 ">
+      <section className="grid grid-cols-1 gap-x-5  pb-16 md:grid-cols-2 lg:grid-cols-3 ">
         {doaList.map((item) => {
           return <DoaCard number={item.id} key={item.id} title={item.judul} />;
         })}

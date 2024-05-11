@@ -3,6 +3,7 @@ import Quran from "@/assets/Quran.svg";
 import Bismillah from "@/assets/bismillah.svg";
 import AyatCard from "@/components/features/AyatCard";
 import { getSurahDetail } from "@/services/getSurahDetail";
+import { getBookMarkList } from "@/actions/getBookmarkList";
 
 type Props = {
   params: { id: string };
@@ -11,6 +12,7 @@ type Props = {
 export default async function page({ params }: Props) {
   const { id } = params;
   const surahDetail = await getSurahDetail(id);
+  const bookMarkList = await getBookMarkList();
 
   return (
     <main className="container mx-auto h-screen space-y-[29px] pt-20 sm:pl-20">
@@ -51,12 +53,21 @@ export default async function page({ params }: Props) {
                   tranlation={ayat.idn}
                   audioUrl={surahDetail.audio}
                   tafsir=""
+                  surah={surahDetail.nama_latin}
+                  bookMarkList={bookMarkList}
+                  surahId={surahDetail.nomor}
                 />
               ))}
           </div>
         </>
       ) : (
-        <></>
+        <>
+          <div className="flex h-full items-center justify-center">
+            <h1 className="text-xl font-semibold">
+              Surah dengan ID {id} tidak ditemukan. Silahkan cek kembali.
+            </h1>
+          </div>
+        </>
       )}
     </main>
   );
