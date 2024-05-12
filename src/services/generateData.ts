@@ -1,5 +1,4 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { AxiosError } from "axios";
 
 export const generateData = async <T>(
   prompt: string,
@@ -19,6 +18,11 @@ export const generateData = async <T>(
   try {
     const response = await model.generateContent(prompt);
     const text = JSON.parse(response?.response?.text());
+    if (!text) {
+      return {
+        error: "An error occurred",
+      };
+    }
 
     return {
       data: text,
@@ -27,7 +31,7 @@ export const generateData = async <T>(
     console.error(error);
     if (error instanceof Error) {
       return {
-        error: "Error with code 429 : Too many requests",
+        error: error.message,
       };
     }
     return {
