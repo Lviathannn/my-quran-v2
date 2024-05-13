@@ -5,9 +5,7 @@ import {
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 
-type Props = {};
-
-export default function NotLoggedIn({}: Props) {
+export default function NotLoggedIn() {
   return (
     <div className="container flex h-screen w-full flex-col items-center justify-center gap-5">
       <h1 className="text-2xl font-medium">

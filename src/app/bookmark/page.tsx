@@ -1,9 +1,7 @@
 import { getBookMarkList } from "@/actions/getBookmarkList";
 import BookMarkCard from "@/components/features/BookMarkCard";
 
-type Props = {};
-
-export default async function page({}: Props) {
+export default async function page() {
   const bookmarks = await getBookMarkList();
 
   return (

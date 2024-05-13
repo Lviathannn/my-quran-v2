@@ -13,10 +13,10 @@ export default async function Home() {
     <main className="container h-screen space-y-[29px] pt-16 sm:pl-20">
       {user && (
         <section className="space-y-1">
-          <p className="text-[18px] font-medium leading-normal text-muted">
+          <p className="text-[18px] font-medium leading-normal text-muted dark:text-muted-foreground">
             Assalamualaikum
           </p>
-          <h1 className="text-2xl font-semibold text-text">
+          <h1 className="text-2xl font-semibold text-text dark:text-primary">
             {user.given_name + " " + user.family_name}
           </h1>
         </section>

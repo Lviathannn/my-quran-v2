@@ -24,7 +24,7 @@ export default async function page({ params }: Props) {
       ) : (
         <>
           <div className="flex h-full items-center justify-center">
-            <h1 className="text-xl font-medium">
+            <h1 className="text text-xl font-medium">
               Surah dengan ID {id} tidak ditemukan. Silahkan cek kembali.
             </h1>
           </div>

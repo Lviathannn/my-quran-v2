@@ -1,8 +1,6 @@
 import { Skeleton } from "../ui/skeleton";
 
-type Props = {};
-
-export default function AyatCardSkeleton({}: Props) {
+export default function AyatCardSkeleton() {
   return (
     <div className="space-y-10">
       <div className="flex w-full justify-between rounded-[10px] bg-accent px-3 py-[10px]">

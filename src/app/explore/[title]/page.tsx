@@ -34,11 +34,13 @@ export default async function page({ params }: Props) {
         {data.data && (
           <article key={data.data.title} className="xl:container">
             <div className="space-y-2 p-3">
-              <h1 className="text-4xl font-semibold text-text">
+              <h1 className="text-4xl font-semibold text-text dark:text-primary">
                 {data.data.title}
               </h1>
-              <p className="text-lg text-muted ">{data.data.speaker}</p>
-              <p className="text-lg text-muted ">
+              <p className="text-lg text-muted dark:text-muted-foreground ">
+                {data.data.speaker}
+              </p>
+              <p className="text-lg text-muted dark:text-muted-foreground ">
                 {new Date(data.data.date).toLocaleDateString("id-ID", {
                   day: "numeric",
                   month: "long",
