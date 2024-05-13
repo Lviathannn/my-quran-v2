@@ -4,7 +4,13 @@ import SearchSurah from "@/components/features/SearchSurah";
 import SurahList from "@/components/features/SurahList";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default async function Home() {
+interface Props {
+  searchParams: {
+    search: string;
+  };
+}
+
+export default async function Home({ searchParams }: Props) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   const latestBookMark = await getLatestBookMark();
@@ -41,7 +47,7 @@ export default async function Home() {
       )}
 
       <SearchSurah />
-      <SurahList />
+      <SurahList search={searchParams.search || ""} />
     </main>
   );
 }
