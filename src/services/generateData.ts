@@ -16,16 +16,12 @@ export const generateData = async <T>(
   });
 
   try {
-    const response = await model.generateContent(prompt);
-    const text = JSON.parse(response?.response?.text());
-    if (!text) {
-      return {
-        error: "An error occurred",
-      };
-    }
-
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const text = response.text();
+    const data = await JSON.parse(text);
     return {
-      data: text,
+      data,
     };
   } catch (error) {
     console.error(error);

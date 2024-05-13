@@ -8,8 +8,17 @@ const ExploreCard = dynamic(() => import("@/components/features/ExploreCard"), {
 });
 
 export default async function MainSection() {
+  const schema = {
+    id: "number",
+    title: "string",
+    speaker: "string",
+    date: "Date",
+  };
+
   const data = await generateData<Explore[]>(
-    "Buat 4 list Kajian tentang islam dengan format json dengan schema {id:number,title:string,speaker:string,date:Date}[]",
+    `Buat 4 list Kajian tentang islam dengan format json dengan schema ${JSON.stringify(
+      schema,
+    )}[]`,
   );
 
   return (
