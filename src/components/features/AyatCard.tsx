@@ -38,13 +38,13 @@ export default function AyatCard({
       </div>
       <div className="space-y-5">
         <p
-          className="font-arabic text-lg font-semibold leading-loose tracking-wide text-text"
+          className="font-arabic text-lg font-semibold leading-loose tracking-wide text-text dark:text-foreground"
           dir="rtl"
         >
           {arabic}
         </p>
         <p className="text-primary">{latin}</p>
-        <p className="text-text">{tranlation}</p>
+        <p className="text-text dark:text-foreground">{tranlation}</p>
       </div>
     </article>
   );

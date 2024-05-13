@@ -41,9 +41,11 @@ export default function AudioPlayer({ audioUrl, surah }: Props) {
 
   return (
     <div className="container fixed bottom-0 left-0 right-0 flex w-full items-center justify-between border-y bg-background py-3 sm:pl-20">
-      <div className="">
+      <div>
         <p className="text-lg font-medium">{surah}</p>
-        <p className="text-sm text-muted">syekh Misyari Rasyid Al-afasi</p>
+        <p className="text-sm text-muted dark:text-muted-foreground">
+          syekh Misyari Rasyid Al-afasi
+        </p>
       </div>
       <Button
         className="rounded-full"

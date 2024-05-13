@@ -1,8 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
-type Props = {};
-
-export default function loading({}: Props) {
+export default function loading() {
   return (
     <main className="container h-screen space-y-[29px] py-16 sm:pl-20">
       <section>

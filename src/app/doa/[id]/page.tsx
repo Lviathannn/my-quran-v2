@@ -30,11 +30,14 @@ export default async function page({ params }: Props) {
         />
       </section>
       <section className="space-y-5 pt-10">
-        <p className="font-arabic text-xl font-semibold text-text" dir="rtl">
+        <p
+          className="font-arabic text-xl font-semibold text-text dark:text-foreground"
+          dir="rtl"
+        >
           {doaDetail?.arab}
         </p>
         <p className="text-primary">{doaDetail?.latin}</p>
-        <p className="text-text">{doaDetail?.terjemah}</p>
+        <p className="text-text dark:text-foreground">{doaDetail?.terjemah}</p>
       </section>
     </main>
   );
