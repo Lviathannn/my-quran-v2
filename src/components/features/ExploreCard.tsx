@@ -27,12 +27,16 @@ export default function ExploreCard({ title, speaker, date }: Props) {
           />
         </div>
         <div className="flex flex-col justify-between p-3">
-          <h2 className="row-span-1 truncate text-lg font-medium text-text">
+          <h2 className="row-span-1 truncate text-lg font-medium text-text dark:text-primary">
             {title}
           </h2>
           <div className="row-span-1">
-            <p className="text-sm text-muted ">{speaker}</p>
-            <p className="text-sm text-muted ">{formatedDate}</p>
+            <p className="text-sm text-muted dark:text-muted-foreground">
+              {speaker}
+            </p>
+            <p className="text-sm text-muted dark:text-muted-foreground">
+              {formatedDate}
+            </p>
           </div>
         </div>
       </article>

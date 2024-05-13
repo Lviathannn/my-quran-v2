@@ -10,7 +10,12 @@ type Props = {
   customClass?: string;
 };
 
-export default function Banner({ title, quote, ayat, customClass }: Props) {
+export default async function Banner({
+  title,
+  quote,
+  ayat,
+  customClass,
+}: Props) {
   return (
     <section className="relative h-[175px] w-full overflow-hidden rounded-xl bg-gradient-to-br from-primary to-secondary p-5 md:h-[200px]">
       <div className="relative z-20 flex h-full flex-col justify-between">

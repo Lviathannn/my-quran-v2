@@ -86,10 +86,10 @@ export default function BookMarkCard({
           </p>
         </div>
         <div>
-          <p className="text-lg font-medium text-text">
+          <p className="text-lg font-medium text-text dark:text-primary">
             {surah} : {ayat}
           </p>
-          <p className="text-sm text-muted">
+          <p className="text-sm text-muted dark:text-muted-foreground">
             {diffTime / 1000 <= 60
               ? "Satu menit yang lalu"
               : diffTime / 1000 / 60 <= 60

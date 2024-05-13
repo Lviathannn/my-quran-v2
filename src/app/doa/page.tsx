@@ -1,8 +1,5 @@
 import DoaCard from "@/components/features/DoaCard";
-import BookIcon from "@/components/icons/BookIcon";
 import { getDoaList } from "@/services/getDoaList";
-import Image from "next/image";
-import Quran from "@/assets/Quran.svg";
 import Banner from "@/components/features/Banner";
 export default async function DoaPage() {
   const doaList = await getDoaList();

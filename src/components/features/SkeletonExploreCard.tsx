@@ -1,8 +1,6 @@
 import { Skeleton } from "../ui/skeleton";
 
-type Props = {};
-
-export default function SkeletonExploreCard({}: Props) {
+export default function SkeletonExploreCard() {
   return (
     <div>
       <div className="w-full overflow-hidden rounded-lg shadow-md">

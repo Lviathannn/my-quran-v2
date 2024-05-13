@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-export default function AyatIcon({}: Props) {
+export default function AyatIcon() {
   return (
     <svg
       width="37"
