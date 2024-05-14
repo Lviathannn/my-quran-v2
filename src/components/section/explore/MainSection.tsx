@@ -1,7 +1,6 @@
 import Banner from "@/components/features/Banner";
 import SkeletonExploreCard from "@/components/features/SkeletonExploreCard";
 import { generateData } from "@/services/generateData";
-import { error } from "console";
 import dynamic from "next/dynamic";
 
 const ExploreCard = dynamic(() => import("@/components/features/ExploreCard"), {

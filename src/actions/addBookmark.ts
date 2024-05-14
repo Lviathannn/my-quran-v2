@@ -12,8 +12,6 @@ export const addBookmark = async (data: {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  console.log(user);
-
   if (!user) {
     throw new Error("User not found");
   }
