@@ -22,6 +22,27 @@ export const metadata: Metadata = {
   title: "My Qur'an",
   description:
     "Al Qur'an digital gratis dan dapat diakses dimana saja , dengan tampilan yang nyaman dan mudah dipahami",
+  openGraph: {
+    type: "website",
+    images: "/open-graph.png",
+    title: {
+      template: "%s / myquran",
+      default: "MyQuran",
+    },
+  },
+  metadataBase: new URL(
+    process.env.KINDE_SITE_URL || "",
+    "https://my-quran-v2.vercel.app/",
+  ),
+  creator: "Muhammad Asrul Rifa Anwar",
+  publisher: "Muhammad Asrul Rifa Anwar",
+  twitter: {
+    images: "/open-graph.png",
+    title: {
+      template: "%s / myquran",
+      default: "MyQuran",
+    },
+  },
 };
 
 export default function RootLayout({

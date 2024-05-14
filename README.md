@@ -1,8 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
 
-## Getting Started
+My Qur'an
 
-First, run the development server:
+## About Project
+
+My Qur'an adalah Al Qur'an digital yang dapat diakses secara gratis ,dan tanpa iklan,dan sudah tashih oleh kemenag. memiliki berbagai fitur yang memungkinkan user dapat membaca Al Qur'an dimana saja.
+
+## Features
+
+Fitur fitur yang ada di My Qur'an :
+
+### User
+
+- Login passwordless atau OAuth menggunakan Google
+- Al Qur'an Digital dengan API yang sudah di tashih oleh kemenag
+- Kumpulan Doa Doa
+- Bookmark ayat terakhir yang sudah dibaca
+- Audio player untuk memutar audio ayat
+- Explore kajian kajian tentang islam
+- Search surah
+- Share ayat ke media social
+- Tafsir di setiap ayat
+
+## Tech Stacks
+
+Project ini di buat menggunakan :
+
+- Next js
+- Typescript
+- Tailwind CSS
+- Shadcn UI
+- Kinde
+- Prisma ORM
+- Supabase Postgree SQL
+- Axios
+- Gemini AI
+
+## Live App Demo
+
+Project ini sudah di deploy dan dapat diakses di : https://my-quran-v2.verce.app
+
+## Setup
+
+```bash
+git clone https://github.com/Lviathannn/my-quran-v2
+```
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
 
 ```bash
 npm run dev
@@ -14,23 +66,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Buka [http://localhost:3000](http://localhost:3000) Dengan browser anda untuk melihat hasilnya
