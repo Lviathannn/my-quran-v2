@@ -21,6 +21,7 @@ Fitur fitur yang ada di My Qur'an :
 - Search surah
 - Share ayat ke media social
 - Tafsir di setiap ayat
+- Darkmode 
 
 ## Tech Stacks
 
